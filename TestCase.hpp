@@ -40,7 +40,6 @@ TestCase& TestCase::check_equal(T a, T b) {
 		save2 << b;
 		string msg = save1.str() + " should equal " + save2.str() + "!";
 		write2stream(msg);
-		//cout <<checkname<< " : Failure in test #"<<failed+passed<< ":"<<" numbers are not equal"<< endl;
 	}
 	return *this;
 }
@@ -76,27 +75,6 @@ TestCase& TestCase::check_function(Function f, ArgType arg, T expected) {
 	}
 	return *this;
 }
-
-/*template<typename T, typename R>
- TestCase& TestCase::check_function(R (*fun)(T), T b, R c) {
- if ((*fun)(b) == c)
- passed++;
- else {
- failed++;
-
- ostringstream save1, save2;
- save1 << b;
- save2 << c;
- string msg = "Function should return " + save1.str() + " but returned "
- + save2.str() + "!";
- write2stream(msg);
- }
- return *this;
- }*/
-
-/*cout << checkname << " : Failure in test #" << failed + passed << ":"
- << " Function should return " << c << " but returned "
- << (*fun)(b) << "!" << endl;*/
 
 template<typename T>
 TestCase& TestCase::check_output(T a, string b) {

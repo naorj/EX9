@@ -1,8 +1,7 @@
 #include "TestCase.hpp"
-#include <string>
 
 void TestCase::write2stream(string msg){
-	string result= checkname+": failed in test #" +std::to_string(passed+failed)+": "+msg;
+	string result= checkname+": Failure in test #" +std::to_string(passed+failed)+": "+msg;
 	os<<result<<endl;
 }
 
